@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>My first app using phonegap</title>
-</head>
-<body>
-<h1>Hi it's my firts app</h1>
-<p id="czesc">Hello ;D</p>
-
-<button type="button" onclick="alert('Wiiiiiiiiitaj na mojeeeej stronie domowej ;DDD')">Nacisnij ! !</button>
-
-<hr>
-
-<p id="demo">
-JavaScript can change the content of an HTML element.
-</p>
-
-<script>
-function myFunction()
-{
-x=document.getElementById("demo");  // Find the element
-x.innerHTML="Hello JavaScript!";    // Change the content
+	<head>
+		<title>Prognoza pogody</title>
+		<style>
+		body
+		{
+		background-image:url('http://zima.meteogroup.pl/uploads/pics/stan_pogody.JPG');
+		background-repeat:no-repeat;
+		}
+		#tytul
+		{
+		color: #D2691E ;
+		text-align: center;
+		position:absolute;
+		top:25px;
+		left:200px;
+		font-size:25px;
+		}
+		#przycisk
+		{
+		float:center;
+		}
+		</style>
+		
+	</head>
+	
+	<body>
+		<script>
+		function goWeather()
+		{
+		var x;
+		var city=prompt("Podaj swoje miasto","Gdansk");
+		var date=prompt("Podaj date","20130925");
+		if (city=="Gdansk")
+		{
+		city="Gda%F1sk";
+		}
+		
+		if (city!=null)
+  {
+  //x="Hello " + city + "! How are you today?";
+  //document.getElementById("demo").innerHTML=x;
+  x="http://www.meteo.pl/um/php/meteorogram_list.php?ntype=0u&fdate=" + date + "06&row=346&col=210&lang=pl&cname=" + city; 
+  window.location.assign(x);
+  }  
 }
 </script>
-
-<button type="button" onclick="myFunction()">Click Me!</button>
-
-<hr>
-</body>
+<p id="tytul">Prognoza pogody</p>
+		<button id="przycisk" type="button" onclick="goWeather()">Sprawdz pogode!</button>
+	</body>
 </html>
