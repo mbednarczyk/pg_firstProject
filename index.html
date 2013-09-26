@@ -25,23 +25,24 @@
 		
 	</head>
 	
-	<body>
+	<body id="bd">
+	
+	<script>
+	var x=screen.availWidth;
+	var y=screen.availHeight;
+	document.getElementById("bd").style.backgroundSize = x + "px " + y + "px";
+	</script>
+	
 		<script>
 		function goWeather()
 		{
 		var x;
-		var city=prompt("Podaj swoje miasto","Gdansk");
-		var date=prompt("Podaj date","20130925");
-		if (city=="Gdansk")
-		{
-		city="Gda%F1sk";
-		}
-		
+		var city=prompt("Podaj swoje miasto","Gdansk");		
 		if (city!=null)
   {
   //x="Hello " + city + "! How are you today?";
   //document.getElementById("demo").innerHTML=x;
-  x="http://www.meteo.pl/um/php/meteorogram_list.php?ntype=0u&fdate=" + date + "06&row=346&col=210&lang=pl&cname=" + city; 
+  x="http://m.meteo.pl/" + city + "/60" 
   window.location.assign(x);
   }  
 }
