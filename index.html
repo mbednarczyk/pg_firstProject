@@ -5,19 +5,20 @@
 		<style>
 		body
 		{
-		background-image:url('http://zima.meteogroup.pl/uploads/pics/stan_pogody.JPG');
+		background-image:url('http://tvnmeteo.tvn24.pl/img/big_map_1_rebrand_V3_new.png');
 		background-repeat:no-repeat;
 		}
-		#tytul
+		p
 		{
-		color: #D2691E ;
+		color: white ;
 		text-align: center;
-		position:absolute;
-		top:25px;
-		left:200px;
-		font-size:25px;
+		font-size:45px;
+		text-decoration:overline;
+		text-decoration:underline;
+		font-weight: 900;
+		margin-top:1px;
 		}
-		#przycisk
+		#but
 		{
 		float:center;
 		}
@@ -48,6 +49,8 @@
 }
 </script>
 <p id="tytul">Prognoza pogody</p>
+<div id="but">
 		<button id="przycisk" type="button" onclick="goWeather()">Sprawdz pogode!</button>
+		</div>
 	</body>
 </html>
